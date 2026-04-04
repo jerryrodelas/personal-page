@@ -1,4 +1,5 @@
-#projects { background: var(--color-surface); }
-#skills   { background: var(--color-bg); }
-#contact  { background: var(--color-surface); }
-#guestbook { background: var(--color-bg); }
+#projects  { background: var(--color-surface); }
+#skills    { background: var(--color-bg); }
+#journey   { background: var(--color-surface); }
+#contact   { background: var(--color-bg); }
+#guestbook { background: var(--color-surface); }
