@@ -3790,3 +3790,462 @@ Let me know when the GitHub repo is created and I'll help you through any issues
 i will come back tonight to finish this off. see ya later. laundy calls. lol
 Haha enjoy the laundry! See you tonight — the site is looking great, nearly at the finish line. Just the Railway deployment left. 👋
 
+Welcome back!
+
+In Railway, when you click Deploy from GitHub repo it sometimes doesn't show your repos if GitHub access hasn't been granted yet. Try this:
+
+In Railway, go to New Project → Deploy from GitHub repo
+At the bottom of the repo list, look for "Configure GitHub App" or "Add a Repository" — click it
+It'll open GitHub → select your account → either choose All repositories or search for personal-page specifically
+Click Save and go back to Railway — your repo should now appear
+If you still can't see it, let me know what you do see on the screen and I'll guide you through it!
+
+when i open the repository in railway, i can not see the one i have created for personal-page. i can see the other one which is sadorio-go. how can i add it or find it?
+That's the GitHub App permissions issue — Railway only has access to repos you've explicitly granted. Here's how to fix it:
+
+In Railway, click Deploy from GitHub repo
+At the bottom of the repo dropdown, click "Configure GitHub App"
+It opens GitHub — under Repository access, click "Select repositories"
+Search for personal-page and select it
+Click Save
+Go back to Railway — it should now appear in the list
+If you can't find "Configure GitHub App" in Railway, go directly to:
+
+github.com → Settings → Applications → Authorized GitHub Apps → Railway → Configure
+
+Then follow steps 3–6 above.
+
+ok. it now appears and i have selected it
+Great! Now:
+
+Click on personal-page in the Railway repo list
+It'll ask about the branch — leave it as main
+Click Deploy
+Railway will start building — it runs npm install, then npm run build, then npm start. The build usually takes 1-2 minutes.
+
+Once it's done you'll see a green Active status. Then to get your live URL:
+
+Go to your project → Settings → Domains
+Click Generate Domain and Railway will give you a free .railway.app URL
+Let me know how it goes!
+
+got an error - context: 0s0w-MJe0
+
+load build definition from railpack-plan.json
+0ms
+
+install apt packages: libatomic1
+2s
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
+
+install mise packages: node
+1s
+mise node@18.20.8 ✓ installed
+
+mkdir -p /app/node_modules/.cache
+173ms
+
+copy package-lock.json, package.json
+30ms
+
+npm ci
+2s
+npm warn config production Use `--omit=dev` instead.
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: @vitejs/plugin-react@4.7.0
+npm error Found: vite@8.0.3
+npm error node_modules/vite
+npm error   dev vite@"^8.0.3" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peer vite@"^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" from @vitejs/plugin-react@4.7.0
+npm error node_modules/@vitejs/plugin-react
+npm error   dev @vitejs/plugin-react@"^4.2.1" from the root project
+npm error
+npm error Conflicting peer dependency: vite@6.4.1
+npm error node_modules/vite
+npm error   peer vite@"^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" from @vitejs/plugin-react@4.7.0
+npm error   node_modules/@vitejs/plugin-react
+npm error     dev @vitejs/plugin-react@"^4.2.1" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /root/.npm/_logs/2026-04-03T14_43_03_550Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-04-03T14_43_03_550Z-debug-0.log
+
+copy /mise/shims cached
+0ms
+
+copy /mise/installs, /usr/local/bin/mise, /etc/mise/config.toml, /root/.local/state/mise
+745ms
+ERROR: failed to build: failed to solve: process "npm ci" did not complete successfully: exit code: 1
+The package-lock.json has Vite 8 locked in which conflicts with the React plugin. Let me fix package.json to pin Vite 5, then you'll need to reinstall and push again.
+
+Read package.json
+Edit package.json
+Modified
+Now run these commands in your terminal to reinstall and push the fix to GitHub:
+
+
+npm install
+git add package.json package-lock.json
+git commit -m "Fix Vite version compatibility"
+git push
+Railway will automatically detect the new push and redeploy. Let me know how it goes!
+
+npm ci
+3s
+npm warn config production Use `--omit=dev` instead.
+npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+
+npm error
+npm error Invalid: lock file's vite@8.0.3 does not satisfy vite@5.4.21
+npm error Missing: esbuild@0.21.5 from lock file
+
+npm error Missing: rollup@4.60.1 from lock file
+
+npm error Missing: @esbuild/aix-ppc64@0.21.5 from lock file
+
+npm error Missing: @esbuild/android-arm@0.21.5 from lock file
+
+npm error Missing: @esbuild/android-arm64@0.21.5 from lock file
+
+npm error Missing: @esbuild/android-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/darwin-arm64@0.21.5 from lock file
+
+npm error Missing: @esbuild/darwin-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/freebsd-arm64@0.21.5 from lock file
+
+npm error Missing: @esbuild/freebsd-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-arm@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-arm64@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-ia32@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-loong64@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-mips64el@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-ppc64@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-riscv64@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-s390x@0.21.5 from lock file
+
+npm error Missing: @esbuild/linux-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/netbsd-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/openbsd-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/sunos-x64@0.21.5 from lock file
+
+npm error Missing: @esbuild/win32-arm64@0.21.5 from lock file
+
+npm error Missing: @esbuild/win32-ia32@0.21.5 from lock file
+
+npm error Missing: @esbuild/win32-x64@0.21.5 from lock file
+
+npm error Missing: @rollup/rollup-android-arm-eabi@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-android-arm64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-darwin-arm64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-darwin-x64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-freebsd-arm64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-freebsd-x64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-arm-gnueabihf@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-arm-musleabihf@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-arm64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-arm64-musl@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-loong64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-loong64-musl@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-ppc64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-ppc64-musl@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-riscv64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-riscv64-musl@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-s390x-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-x64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-linux-x64-musl@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-openbsd-x64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-openharmony-arm64@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-win32-arm64-msvc@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-win32-ia32-msvc@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-win32-x64-gnu@4.60.1 from lock file
+
+npm error Missing: @rollup/rollup-win32-x64-msvc@4.60.1 from lock file
+
+npm error Missing: @types/estree@1.0.8 from lock file
+
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-04-03T14_44_49_161Z-debug-0.log
+ERROR: failed to build: failed to solve: process "npm ci" did not complete successfully: exit code: 1
+The package-lock.json still has Vite 8 locked in. We need to regenerate it. Run these commands:
+
+
+rm package-lock.json
+npm install
+git add package.json package-lock.json
+git commit -m "Regenerate lock file with Vite 5"
+git push
+The rm deletes the old lock file so npm install creates a fresh one with Vite 5. Railway will auto-redeploy once the push lands.
+
+You reached the start of the range
+Apr 4, 2026, 1:41 AM
+ 
+[Region: us-west1]
+INFO No package manager inferred, using npm default
+ 
+ 
+╭─────────────────╮
+│ Railpack 0.23.0 │
+╰─────────────────╯
+ 
+↳ Detected Node
+↳ Using npm package manager
+ 
+Packages
+──────────
+node  │  18.20.8  │  package.json > engines > node (>=18.0.0)
+ 
+Steps
+──────────
+▸ install
+$ npm ci
+ 
+▸ build
+$ npm run build
+ 
+Deploy
+──────────
+$ npm run start
+ 
+ 
+Successfully prepared Railpack plan for build
+ 
+ 
+context: 1fvv-SDwy
+
+load build definition from railpack-plan.json
+0ms
+
+install mise packages: node
+1s
+mise node@18.20.8 ✓ installed
+
+install apt packages: libatomic1
+2s
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
+
+mkdir -p /app/node_modules/.cache
+152ms
+
+copy package-lock.json, package.json
+85ms
+
+npm ci
+2s
+Run `npm audit` for details.
+
+copy /root/.local/state/mise, /etc/mise/config.toml, /mise/shims, /mise/installs, /usr/local/bin/mise cached
+0ms
+
+copy / /app
+54ms
+
+npm run build
+1s
+✓ built in 805ms
+
+copy /app/node_modules
+281ms
+
+copy /root/.cache cached
+0ms
+
+copy /app
+128ms
+
+sharing credentials for production-us-west2.railway-registry.com
+0ms
+
+importing to docker
+4s
+Build time: 47.50 seconds
+That's a successful build! 🎉 Now get your live URL:
+
+In Railway, go to your personal-page project
+Click Settings → Domains
+Click Generate Domain
+That'll give you a free yourapp.railway.app URL. Paste it here once you have it — let's make sure the live site looks right!
+
+{
+  "message": "    at Module._compile (node:internal/modules/cjs/loader:1328:27)",
+  "severity": "error",
+  "attributes": {
+    "level": "error"
+  },
+  "tags": {
+    "project": "0d910d73-d101-41ba-b23f-f659cc0b1777",
+    "environment": "36e7104e-a50f-4244-8f08-f03e8af7d63f",
+    "service": "2b0a36e7-5468-4abd-96cc-cc81fad04c8e",
+    "deployment": "b3d83493-cb56-435e-a364-907e1c3e4b05",
+    "replica": "203e9c00-2b87-40d4-a59c-7fb436d41667"
+  },
+  "timestamp": "2026-04-03T14:47:12.893297112Z"
+}
+The build passed but the server is crashing on start. The issue is server.js uses ES module import syntax but package.json doesn't declare it as an ES module. Let me fix server.js to use CommonJS instead:
+
+Write server.js
+16 lines
+const express = require('express')
+const path = require('path')
+
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.use(express.static(path.join(__dirname, 'dist')))
+
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+})
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
+Now push the fix:
+
+
+git add server.js
+git commit -m "Fix server.js to use CommonJS"
+git push
+Railway will redeploy automatically. Let me know what you see!
+
+ok. it is now online
+Congrats! 🎉 Your portfolio is live on Railway!
+
+Drop the URL here so I can take a look — and you should also share it on your LinkedIn and attach it to your resume/job applications. Having a live portfolio with real shipped apps is a big plus for junior dev roles.
+
+personal-page-production-f222.up.railway.app
+Web Fetchhttps://personal-page-production-f222.up.railway.app
+Fetched from https://personal-page-production-f222.up.railway.app
+The site is live and working! The fetch tool can't render JavaScript (it's a React app, so content loads via JS) — that's normal, not an issue.
+
+Open it in your browser: personal-page-production-f222.up.railway.app — it should look exactly like your local version.
+
+A few things to update now that it's live:
+
+Update your resume — add the portfolio URL
+Update your LinkedIn — add it to your profile's featured section
+Add your App Store links in src/data/projects.js if you haven't already — they'll show as live links on the site
+Any time you make changes locally, just run:
+
+
+git add .
+git commit -m "your message"
+git push
+Railway auto-deploys every push. You're live! 🚀
+
+if its already live, is there anyway i can change the url? instead of personal-page-production-f222.up.railway.app - i want it to be jerryrodelas.up.railway.app or anyhin that is associated to my name
+Yes! In Railway:
+
+Go to your personal-page project
+Click on the service (the box inside the project)
+Go to Settings → Networking → Public Networking
+You'll see your current domain — click on it to edit
+Change it to jerryrodelas and hit Update
+Your URL will become jerryrodelas.up.railway.app
+
+If that name is already taken, try jerriandrodelas or jr-dev-portfolio.
+
+great! it is now jerry-rodelas.up.railway.app
+That's a clean URL! 🎉
+
+jerry-rodelas.up.railway.app — professional and easy to remember.
+
+Now go add it everywhere:
+
+Resume — under your name/contact details
+LinkedIn — Profile → Featured or About section
+GitHub profile — add it as your website in your profile settings
+You've got a live portfolio with real shipped apps, a guestbook/contact form, and a clean purple-tinted design. That's a solid first impression for any recruiter or hiring manager. Good luck with the job hunt! 💪
+
+i want to change the headshot please. the new phto is on the resume folder called jr.jpg
+Bash Replace avatar with new headshot
+IN
+cp "c:/Users/jerri/Documents/Personal Page/resume/jr.jpg" "c:/Users/jerri/Documents/Personal Page/public/avatar.jpg"
+
+OUT
+(Bash completed with no output)
+Done! The new photo is in place. Check http://localhost:5173 to see how it looks. If the crop needs adjusting (too much chest, not enough hair etc.) just let me know and I'll tweak the object-position.
+
+Once you're happy with it, push to deploy:
+
+
+git add public/avatar.jpg
+git commit -m "Update headshot"
+git push
+i want to see it please. npw run dev?
+Yes, run npm run dev in your terminal then open http://localhost:5173 in your browser!
+
+i've looked at railway and the old photo is still there
+You need to push the new photo to GitHub so Railway picks it up:
+
+
+git add public/avatar.jpg
+git commit -m "Update headshot"
+git push
+Railway will auto-redeploy in about a minute after the push.
+
+thank you for your help. i will work with you tommorrow.i gotta zzzzzzz
+Haha sleep well! 😄 The site is looking great and it's live — that's a solid day's work. See you tomorrow! 🚀

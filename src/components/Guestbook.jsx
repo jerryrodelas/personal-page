@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './Guestbook.css'
 
-const RECIPIENT = 'jerriandrodelas@gmail.com'
+const WEB3FORMS_KEY = 'fac6a31c-3e8f-40cf-ba60-e1da927a5a0b'
 const MAX_MESSAGE = 300
 
 export default function Guestbook() {
   const [form, setForm] = useState({ name: '', email: '', role: '', message: '' })
+  const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
 
@@ -16,20 +17,43 @@ export default function Guestbook() {
     setError('')
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setError('Name, email, and message are required.')
       return
     }
 
-    const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}${form.role ? `\nRole: ${form.role}` : ''}\n\n${form.message}`
-    )
+    setSubmitting(true)
+    setError('')
 
-    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          role: form.role.trim() || 'Not provided',
+          message: form.message.trim(),
+          subject: `Portfolio message from ${form.name.trim()}`,
+        }),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        setForm({ name: '', email: '', role: '', message: '' })
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Network error. Please try again.')
+    }
+
+    setSubmitting(false)
   }
 
   return (
@@ -37,15 +61,18 @@ export default function Guestbook() {
       <div className="container">
         <h2 className="section-title">Leave a Message</h2>
         <p className="section-subtitle">
-          Have something to say? Fill in the form and it'll open your email — ready to send.
+          Have something to say? I'd love to hear from you — messages go straight to my inbox.
         </p>
 
         <div className="guestbook__form-wrap">
           {submitted ? (
             <div className="guestbook__thanks">
               <p className="guestbook__thanks-icon">✉️</p>
-              <p>Your email client should have opened with the message pre-filled. Just hit send!</p>
-              <button className="btn btn--ghost" onClick={() => { setSubmitted(false); setForm({ name: '', email: '', role: '', message: '' }) }}>
+              <p>Message sent! I'll get back to you soon.</p>
+              <button
+                className="btn btn--ghost"
+                onClick={() => setSubmitted(false)}
+              >
                 Send another
               </button>
             </div>
@@ -111,8 +138,8 @@ export default function Guestbook() {
 
               {error && <p className="guestbook__error">{error}</p>}
 
-              <button type="submit" className="btn btn--primary">
-                Open in Email Client
+              <button type="submit" className="btn btn--primary" disabled={submitting}>
+                {submitting ? 'Sending…' : 'Send Message'}
               </button>
             </form>
           )}
