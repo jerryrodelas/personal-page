@@ -47,7 +47,7 @@ export default function Guestbook() {
         setSubmitted(true)
         setForm({ name: '', email: '', role: '', message: '' })
       } else {
-        setError('Something went wrong. Please try again.')
+        setError(data.message || 'Something went wrong. Please try again.')
       }
     } catch {
       setError('Network error. Please try again.')
