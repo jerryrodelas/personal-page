@@ -17,10 +17,10 @@ export const projects = [
     category: "mobile",
     status: "completed",
     tags: ["Flutter", "Dart", "SQLite", "iOS"],
-    appStoreLink: "https://apps.apple.com/us/app/bougette/id6758544911", // add your App Store URL here
+    appStoreLink: "https://apps.apple.com/us/app/bougette/id6758544911",
     playStoreLink: "",
     githubLink: "",
-    image: "",
+    image: "/bougette.jpg",
   },
   {
     id: 2,
@@ -31,10 +31,10 @@ export const projects = [
     category: "mobile",
     status: "completed",
     tags: ["Flutter", "Dart", "Go", "Supabase", "Railway", "RevenueCat", "iOS"],
-    appStoreLink: "https://apps.apple.com/us/app/sadorio/id6759517876", // add your App Store URL here
+    appStoreLink: "https://apps.apple.com/us/app/sadorio/id6759517876",
     playStoreLink: "",
     githubLink: "",
-    image: "",
+    image: "/sadorio.jpg",
   },
 
   // ── In-Progress Projects ──────────────────────────────────────────────────
