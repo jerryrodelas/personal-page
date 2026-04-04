@@ -53,6 +53,12 @@
   background: var(--color-surface);
 }
 
+.navbar__links a.navbar__link--active {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  font-weight: 600;
+}
+
 /* Burger */
 .navbar__burger {
   display: none;

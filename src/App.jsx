@@ -1,4 +1,5 @@
 import './App.css'
+import ScrollProgress from './components/ScrollProgress'
 import Navbar    from './components/Navbar'
 import About     from './components/About'
 import Stats     from './components/Stats'
@@ -12,6 +13,7 @@ import Footer    from './components/Footer'
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main>
         <About />
