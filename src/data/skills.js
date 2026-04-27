@@ -29,6 +29,7 @@ export const skillCategories = [
       { name: "Python" },
       { name: "Django" },
       { name: "Node.js" },
+      { name: "MongoDB" },
       { name: "Firebase" },
       { name: "Supabase" },
       { name: "SQLite" },
