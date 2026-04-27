@@ -37,6 +37,22 @@ export const projects = [
     image: "/sadorio.jpg",
   },
 
+  // ── Full-Stack Web Apps ───────────────────────────────────────────────────
+  {
+    id: 7,
+    title: "MitsuMori — Security Tender Assistant",
+    tagline: "Full-stack tool that auto-scans construction tender PDFs for electronic security scope.",
+    description:
+      "Built for Australian electronic security technicians — MitsuMori ingests 10+ mixed-trade PDF bundles from builders, scans for CCTV, access control, intercom and alarm content, extracts legend/schedule tables from AutoCAD drawings, runs OCR on scanned pages, and uses the Claude API to generate an AI-powered scope summary. Produces a structured bill of quantities with Excel export.",
+    category: "web",
+    status: "completed",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Python", "FastAPI", "Claude API", "JWT", "Tailwind CSS", "Railway"],
+    appStoreLink: "",
+    playStoreLink: "",
+    githubLink: "",
+    image: "",
+  },
+
   // ── In-Progress Projects ──────────────────────────────────────────────────
   {
     id: 6,
