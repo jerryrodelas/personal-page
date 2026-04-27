@@ -50,6 +50,7 @@ export const projects = [
     appStoreLink: "",
     playStoreLink: "",
     githubLink: "",
+    liveLink: "https://mitsumori.up.railway.app/login",
     image: "",
   },
 
@@ -61,7 +62,7 @@ export const projects = [
     description:
       "Building the cloud infrastructure for the Sadorio platform — a backend written in Go (Gin), deployed on Railway with Supabase as the database layer. Designed with a microservices architecture to support the next major release of the Sadorio iOS app.",
     category: "other",
-    status: "in-progress",
+    status: "completed",
     tags: ["Go", "Gin", "Supabase", "Railway", "Microservices"],
     appStoreLink: "",
     playStoreLink: "",
@@ -75,7 +76,7 @@ export const projects = [
     description:
       "Built a mobile LMS prototype with lesson navigation and progress tracking, designed for scalable multi-year curriculum support. Currently under review with an LMS director for potential adoption.",
     category: "mobile",
-    status: "in-progress",
+    status: "completed",
     tags: ["TypeScript", "React Native"],
     appStoreLink: "",
     playStoreLink: "",

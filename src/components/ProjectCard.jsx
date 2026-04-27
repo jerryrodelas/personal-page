@@ -3,7 +3,7 @@ import './ProjectCard.css'
 
 export default function ProjectCard({ project, delay = 0 }) {
   const [ref, inView] = useInView()
-  const { title, tagline, description, status, tags, appStoreLink, playStoreLink, githubLink, image } = project
+  const { title, tagline, description, status, tags, appStoreLink, playStoreLink, githubLink, liveLink, image } = project
 
   return (
     <article
@@ -33,8 +33,13 @@ export default function ProjectCard({ project, delay = 0 }) {
           </div>
         )}
 
-        {(appStoreLink || playStoreLink || githubLink) && (
+        {(appStoreLink || playStoreLink || githubLink || liveLink) && (
           <div className="card__links">
+            {liveLink && (
+              <a href={liveLink} target="_blank" rel="noopener noreferrer" className="card__link">
+                Live Demo ↗
+              </a>
+            )}
             {appStoreLink && (
               <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="card__link">
                 App Store ↗
