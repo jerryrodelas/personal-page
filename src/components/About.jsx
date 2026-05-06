@@ -33,7 +33,7 @@ export default function About() {
               role where I can contribute to production systems and keep growing.
             </p>
             <div className="about__badges">
-              <span className="about__badge">📱 2 Apps on the App Store</span>
+              <span className="about__badge">📱 3 Apps on the App Store</span>
               <span className="about__badge">🚀 Open to Junior Roles</span>
               <span className="about__badge">📍 Sydney, NSW</span>
             </div>
