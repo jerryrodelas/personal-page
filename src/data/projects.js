@@ -37,6 +37,22 @@ export const projects = [
     image: "/sadorio.jpg",
   },
 
+  {
+    id: 8,
+    title: "Naruriji — AI Diary & Second Brain",
+    tagline: "A smart diary app that answers questions about your own life using AI.",
+    description:
+      "An iOS diary app powered by Gemini AI as a RAG (Retrieval-Augmented Generation) assistant. Your diary entries become a searchable knowledge base — ask natural language questions like 'How many tenders did I submit in the last 3 months?' and Naruriji retrieves and enumerates the answer from your own entries. Your personal second brain.",
+    category: "mobile",
+    status: "completed",
+    tags: ["Flutter", "Dart", "SQLite", "Gemini AI", "RAG", "iOS"],
+    appStoreLink: "https://apps.apple.com/us/app/naruriji/id6761648432",
+    playStoreLink: "",
+    githubLink: "",
+    liveLink: "",
+    image: "",
+  },
+
   // ── Full-Stack Web Apps ───────────────────────────────────────────────────
   {
     id: 7,
