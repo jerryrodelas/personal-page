@@ -50,7 +50,7 @@ export const projects = [
     playStoreLink: "",
     githubLink: "",
     liveLink: "",
-    image: "",
+    image: "/naruriji.jpg",
   },
 
   // ── Full-Stack Web Apps ───────────────────────────────────────────────────
