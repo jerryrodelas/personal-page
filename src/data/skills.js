@@ -29,11 +29,14 @@ export const skillCategories = [
       { name: "Python" },
       { name: "Django" },
       { name: "Node.js" },
+      { name: "ASP.NET Core" },
       { name: "MongoDB" },
+      { name: "PostgreSQL" },
       { name: "Firebase" },
       { name: "Supabase" },
       { name: "SQLite" },
       { name: "REST APIs" },
+      { name: "Claude AI" },
     ],
   },
   {
@@ -41,6 +44,7 @@ export const skillCategories = [
     skills: [
       { name: "Git & GitHub" },
       { name: "Railway" },
+      { name: "Azure" },
       { name: "App Store Connect" },
       { name: "VS Code" },
     ],
