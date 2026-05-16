@@ -1,0 +1,97 @@
+good evening claude, can you please update my webpage as the app i have submitted is now live in the app store. the app name is Naruriji - the stack is Flutter, SQlite and Gemini. i am using Gemini as RAG. The AI assistant retrieves the data from the diary. let's say i ask, how many tenders i have submitted on the last 3 months. then it will enumerate all the tenders found on the diary. this is like a second brain.
+Good evening! Congratulations on the App Store launch! 🎉 Let me add Naruriji to the projects.
+
+Read projects.js
+Edit projects.js
+Added 16 lines
+Done! Naruriji is now live on the site as a completed mobile app. Two things to add when you have them:
+
+App Store URL — drop it into the appStoreLink field in src/data/projects.js
+Screenshot — add it to the assets/ folder and I'll wire it up like Bougette and Sadorio
+Push when ready:
+
+
+git add .
+git commit -m "Add Naruriji app"
+git push
+https://apps.apple.com/us/app/naruriji/id6761648432
+Edit projects.js
+Edit failed
+I can see the file has a syntax error — the URL was added incorrectly on line 49. Let me fix it:
+
+Edit projects.js
+Modified
+Done! App Store link is now properly set for Naruriji. Push when ready:
+
+
+git add .
+git commit -m "Add Naruriji App Store link"
+git push
+thank you. it still shows 2 apps in app store and also it doesnt have that app store snapshot like bougette and sadorio
+Let me fix both — update the counter and check the assets folder for a screenshot:
+
+Bash List assets folder
+IN
+ls "c:/Users/jerri/Documents/Personal Page/assets/"
+
+OUT
+bougette_appstore.jpg
+hs1.jpg
+sadorio_appstore.jpg
+No Naruriji screenshot yet in the assets folder — you'll need to add one. In the meantime let me fix the counter:
+
+Edit Stats.jsx
+Modified
+Counter updated to 3. For the screenshot, drop a Naruriji App Store screenshot into the assets/ folder and tell me the filename — I'll copy it to public/ and wire it up just like Bougette and Sadorio.
+
+Push the counter fix now if you like:
+
+
+git add .
+git commit -m "Update app count to 3"
+git push
+naruriji snapshot added on asset folder
+Bash List assets folder
+IN
+ls "c:/Users/jerri/Documents/Personal Page/assets/"
+
+OUT
+bougette_appstore.jpg
+hs1.jpg
+naruriji_appstore.jpg
+sadorio_appstore.jpg
+Bash Copy Naruriji screenshot to public folder
+IN
+cp "c:/Users/jerri/Documents/Personal Page/assets/naruriji_appstore.jpg" "c:/Users/jerri/Documents/Personal Page/public/naruriji.jpg"
+
+OUT
+(Bash completed with no output)
+Edit projects.js
+Modified
+Done! Check http://localhost:5173 — Naruriji should now show the screenshot. Push when ready:
+
+
+git add .
+git commit -m "Add Naruriji screenshot"
+git push
+sorry can you combine both the 2 git add on one comand?
+No worries! Since you haven't pushed yet, just run this one command that covers everything:
+
+
+git add . && git commit -m "Add Naruriji app, screenshot and update app count to 3" && git push
+there is a widget that says 2 apps in app store beside open to junior roles widget. tell me where it is and i will change it
+That's in src/components/About.jsx — look for this line:
+
+
+<span className="about__badge">📱 2 Apps on the App Store</span>
+Change the 2 to 3.
+
+i have change it. how do i push this in github?
+Just run:
+
+
+git add . && git commit -m "Update app count to 3" && git push
+thank you all good now.
+Great! Everything is live and up to date. 🚀
+
+3 apps on the App Store — Bougette, Sadorio, and Naruriji. That's a solid portfolio!

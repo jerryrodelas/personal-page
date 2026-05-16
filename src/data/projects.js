@@ -55,6 +55,21 @@ export const projects = [
 
   // ── Full-Stack Web Apps ───────────────────────────────────────────────────
   {
+    id: 9,
+    title: "Ryutabi — AI Travel Companion",
+    tagline: "Mood-first travel discovery powered by Claude AI on a Microsoft enterprise stack.",
+    description:
+      "An AI-powered travel companion that replaces the overwhelm of traditional booking apps with a mood-first discovery experience. Built on a full Microsoft enterprise stack — React, TypeScript, ASP.NET Core, PostgreSQL, and Azure — with Claude AI driving personalised travel recommendations.",
+    category: "web",
+    status: "completed",
+    tags: ["React", "TypeScript", "ASP.NET Core", "PostgreSQL", "Azure", "Claude AI"],
+    appStoreLink: "",
+    playStoreLink: "",
+    githubLink: "",
+    liveLink: "https://ryutravel.net",
+    image: "",
+  },
+  {
     id: 7,
     title: "MitsuMori — Security Tender Assistant",
     tagline: "Full-stack tool that auto-scans construction tender PDFs for electronic security scope.",
