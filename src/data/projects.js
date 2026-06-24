@@ -56,18 +56,18 @@ export const projects = [
   // ── Full-Stack Web Apps ───────────────────────────────────────────────────
   {
     id: 9,
-    title: "Ryutabi — AI Travel Companion",
+    title: "Ryutabi (流旅) — AI Travel Companion",
     tagline: "Mood-first travel discovery powered by Claude AI on a Microsoft enterprise stack.",
     description:
-      "An AI-powered travel companion that replaces the overwhelm of traditional booking apps with a mood-first discovery experience. Built on a full Microsoft enterprise stack — React, TypeScript, ASP.NET Core, PostgreSQL, and Azure — with Claude AI driving personalised travel recommendations.",
+      "An AI-powered travel companion that replaces search forms with a mood. Users pick how they want to feel, and Claude AI suggests destinations with evocative narratives and hidden-gem tips, then surfaces real flight and hotel pricing in their local currency before handing off to booking partners. Built full-stack: React/React Native frontend, ASP.NET Core (.NET) + PostgreSQL backend, deployed on Azure. Live on web and iOS.",
     category: "web",
     status: "completed",
-    tags: ["React", "TypeScript", "ASP.NET Core", "PostgreSQL", "Azure", "Claude AI"],
-    appStoreLink: "",
+    tags: ["React", "React Native", "TypeScript", "ASP.NET Core", "PostgreSQL", "Azure", "Claude AI"],
+    appStoreLink: "https://apps.apple.com/au/app/ryutabi/id6782349527",
     playStoreLink: "",
     githubLink: "",
     liveLink: "https://ryutravel.net",
-    image: "",
+    image: "/ryutabi.jpg",
   },
   {
     id: 7,
