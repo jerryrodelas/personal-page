@@ -3,7 +3,7 @@ import { useInView } from '../hooks/useInView'
 import './Stats.css'
 
 const STATS = [
-  { value: 3,   suffix: '',  label: 'Apps on the App Store', icon: '📱' },
+  { value: 4,   suffix: '',  label: 'Apps on the App Store', icon: '📱' },
   { value: 15,  suffix: '+', label: 'Years in Tech',         icon: '🔧' },
   { value: 6,   suffix: '+', label: 'Certifications',        icon: '🎓' },
   { value: 1,   suffix: '',  label: 'Bold Career Pivot',     icon: '🚀' },

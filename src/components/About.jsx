@@ -28,13 +28,13 @@ export default function About() {
             </p>
             <p className="about__bio">
               I build apps and products that live on people's phones and screens.
-              I've shipped two iOS apps to the App Store — handling everything from
-              architecture to release — and I'm actively seeking a junior engineering
-              role where I can contribute to production systems and keep growing.
+              I've shipped four iOS apps to the App Store — handling everything from
+              architecture to release — and I'm actively seeking a junior to mid-level
+              full stack engineering role where I can contribute to production systems and keep growing.
             </p>
             <div className="about__badges">
-              <span className="about__badge">📱 3 Apps on the App Store</span>
-              <span className="about__badge">🚀 Open to Junior Roles</span>
+              <span className="about__badge">📱 4 Apps on the App Store</span>
+              <span className="about__badge">🚀 Open to Full Stack Software Development Roles</span>
               <span className="about__badge">📍 Sydney, NSW</span>
             </div>
             <div className="about__actions">
