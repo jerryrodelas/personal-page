@@ -71,6 +71,7 @@ export const projects = [
   },
   {
     id: 10,
+    agentic: true,
     title: "Prospect — Agentic Job Application Pipeline",
     tagline: "Multi-stage LangGraph pipeline that scrapes, scores, and applies to jobs autonomously.",
     description:
@@ -86,6 +87,7 @@ export const projects = [
   },
   {
     id: 11,
+    agentic: true,
     title: "FieldBrain — AI Field Documentation Assistant",
     tagline: "Mobile RAG app that turns instruction manuals into a natural-language knowledge base.",
     description:
@@ -101,6 +103,7 @@ export const projects = [
   },
   {
     id: 7,
+    agentic: true,
     title: "MitsuMori — Security Tender Assistant",
     tagline: "Full-stack tool that auto-scans construction tender PDFs for electronic security scope.",
     description:

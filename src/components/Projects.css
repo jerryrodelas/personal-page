@@ -40,3 +40,30 @@
   color: var(--color-muted);
   font-size: 0.95rem;
 }
+
+.projects__section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.projects__section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.projects__section-header--spaced {
+  margin-top: 3rem;
+}
+
+.projects__section-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+}

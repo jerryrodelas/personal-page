@@ -35,6 +35,25 @@ export default function Projects() {
 
         {filtered.length === 0 ? (
           <p className="projects__empty">No projects in this category yet.</p>
+        ) : active === 'All' ? (
+          <>
+            <div className="projects__section-header">
+              <span className="projects__section-label">⚡ AI &amp; Agentic Projects</span>
+            </div>
+            <div className="projects__grid">
+              {filtered.filter(p => p.agentic).map(project => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+            <div className="projects__section-header projects__section-header--spaced">
+              <span className="projects__section-label">Other Projects</span>
+            </div>
+            <div className="projects__grid">
+              {filtered.filter(p => !p.agentic).map(project => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </>
         ) : (
           <div className="projects__grid">
             {filtered.map(project => (
