@@ -46,10 +46,18 @@ export default function Projects() {
               ))}
             </div>
             <div className="projects__section-header projects__section-header--spaced">
+              <span className="projects__section-label">📱 Mobile Apps</span>
+            </div>
+            <div className="projects__grid">
+              {filtered.filter(p => p.mobileApp).map(project => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+            <div className="projects__section-header projects__section-header--spaced">
               <span className="projects__section-label">Other Projects</span>
             </div>
             <div className="projects__grid">
-              {filtered.filter(p => !p.agentic).map(project => (
+              {filtered.filter(p => !p.agentic && !p.mobileApp).map(project => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>

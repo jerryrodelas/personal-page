@@ -10,6 +10,7 @@ export const projects = [
   // ── Live App Store Apps ───────────────────────────────────────────────────
   {
     id: 1,
+    mobileApp: true,
     title: "Bougette – Budget Tracker",
     tagline: "A privacy-first personal budget tracker with 150+ currency support.",
     description:
@@ -24,6 +25,7 @@ export const projects = [
   },
   {
     id: 2,
+    mobileApp: true,
     title: "Sadorio – Field Service Management",
     tagline: "iOS app for Australian tradespeople to manage field operations.",
     description:
@@ -39,6 +41,7 @@ export const projects = [
 
   {
     id: 8,
+    mobileApp: true,
     title: "Naruriji — AI Diary & Second Brain",
     tagline: "A smart diary app that answers questions about your own life using AI.",
     description:
@@ -56,6 +59,7 @@ export const projects = [
   // ── Full-Stack Web Apps ───────────────────────────────────────────────────
   {
     id: 9,
+    mobileApp: true,
     title: "Ryutabi (流旅) — AI Travel Companion",
     tagline: "Mood-first travel discovery powered by Claude AI on a Microsoft enterprise stack.",
     description:
