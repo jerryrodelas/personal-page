@@ -37,6 +37,9 @@ export const skillCategories = [
       { name: "SQLite" },
       { name: "REST APIs" },
       { name: "Claude AI" },
+      { name: "LangChain" },
+      { name: "LangGraph" },
+      { name: "Pinecone" },
     ],
   },
   {
