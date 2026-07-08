@@ -23,19 +23,24 @@ export const skillCategories = [
     ],
   },
   {
-    category: "Backend & Data",
+    category: "Backend",
     skills: [
       { name: "Go (Golang)" },
       { name: "Python" },
       { name: "Django" },
       { name: "Node.js" },
       { name: "ASP.NET Core" },
+      { name: "REST APIs" },
+    ],
+  },
+  {
+    category: "Databases & AI",
+    skills: [
       { name: "MongoDB" },
       { name: "PostgreSQL" },
       { name: "Firebase" },
       { name: "Supabase" },
       { name: "SQLite" },
-      { name: "REST APIs" },
       { name: "Claude AI" },
       { name: "LangChain" },
       { name: "LangGraph" },
